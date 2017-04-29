@@ -1,0 +1,98 @@
+<html >
+
+<script src="ang.js">
+
+</script>
+<style >
+	div
+	{ }
+	marquee,a,h2,h3{
+		color: white;
+	}
+</style>
+<body background="image\ch.jpg">
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '101112303793219',
+      xfbml      : true,
+      version    : 'v2.9'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div ng-app="myApp" ng-controller="myctrl" ng-model="pnrstatus">
+<img src="image\ipl.jpg">
+
+
+</br>
+
+<br>
+<div ">
+
+<button  ng-click='sayHello()'><h4>CLICK TO KNOW  LEFT MATHCES OF IPL..</h4></button>
+
+<br>
+<h3 ng-repeat="id in mywelcome.matches" >   
+
+{{id['team-2']}}   vs   {{id['team-1']}}
+<br>
+ </h3>
+}
+}
+}
+}
+
+</div>
+
+<marquee>
+<h1> Creater of the website is </h1>
+
+</marquee>
+<img src="image\rishab.jpg ">
+
+</div>
+
+
+<script>
+
+var app=angular.module('myApp',[]);
+app.controller('myctrl',function ($scope,$http,$log) {
+$scope.trainnumber='delhi';		
+ $scope.sayHello = function() {
+    $scope.greeting = $scope.trainnumber ;
+$http({
+
+method:'GET',
+
+url:' http://cricapi.com/api/matches/TmPEXXFO4bM4SjsiPllTCcS1pzn1'})
+.then(function(response)
+{
+$scope.mywelcome=response.data;
+});
+
+
+
+
+};
+
+
+
+});
+
+</script>
+
+</body>
+
+
+</html>
